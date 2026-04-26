@@ -1,6 +1,6 @@
 import {defineArrayMember, defineField, defineType} from "sanity";
 
-const linkAction = defineType({
+export const linkAction = defineType({
   name: "linkAction",
   title: "Link Action",
   type: "object",
@@ -21,7 +21,7 @@ const linkAction = defineType({
   ],
 });
 
-const heroHighlight = defineType({
+export const heroHighlight = defineType({
   name: "heroHighlight",
   title: "Hero Highlight",
   type: "object",
@@ -31,7 +31,7 @@ const heroHighlight = defineType({
   ],
 });
 
-const statItem = defineType({
+export const statItem = defineType({
   name: "statItem",
   title: "Stat Item",
   type: "object",
@@ -41,7 +41,7 @@ const statItem = defineType({
   ],
 });
 
-const serviceItem = defineType({
+export const serviceItem = defineType({
   name: "serviceItem",
   title: "Service",
   type: "object",
@@ -58,7 +58,7 @@ const serviceItem = defineType({
   ],
 });
 
-const consultationOption = defineType({
+export const consultationOption = defineType({
   name: "consultationOption",
   title: "Consultation Option",
   type: "object",
@@ -68,7 +68,7 @@ const consultationOption = defineType({
   ],
 });
 
-const testimonialItem = defineType({
+export const testimonialItem = defineType({
   name: "testimonialItem",
   title: "Testimonial",
   type: "object",
@@ -78,7 +78,7 @@ const testimonialItem = defineType({
   ],
 });
 
-const aboutNote = defineType({
+export const aboutNote = defineType({
   name: "aboutNote",
   title: "About Note",
   type: "object",
@@ -255,4 +255,3 @@ export const siteSettings = defineType({
     },
   },
 });
-
