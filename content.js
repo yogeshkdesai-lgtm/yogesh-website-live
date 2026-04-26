@@ -1,5 +1,9 @@
 window.DEFAULT_SITE_CONTENT = {
   brandName: "Yogesh K. Desai",
+  brandLogo: {
+    url: "",
+    alt: "Yogesh K. Desai logo",
+  },
   footerTagline:
     "Business and management advisory helping leaders build resilient, growth-ready organisations.",
   hero: {

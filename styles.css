@@ -83,9 +83,31 @@ textarea {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
   font-family: var(--serif);
   font-size: 1.25rem;
   letter-spacing: 0.04em;
+}
+
+.brand-logo {
+  display: none;
+  width: auto;
+  max-height: 54px;
+  max-width: 220px;
+  object-fit: contain;
+}
+
+.footer-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.footer-logo {
+  max-height: 48px;
 }
 
 .site-nav {
@@ -655,7 +677,7 @@ textarea {
 }
 
 .footer-brand {
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 
 .footer-links {

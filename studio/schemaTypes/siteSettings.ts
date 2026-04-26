@@ -110,6 +110,19 @@ export const siteSettings = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "brandLogo",
+      title: "Brand Logo",
+      type: "image",
+      group: "global",
+      options: {hotspot: true},
+    }),
+    defineField({
+      name: "brandLogoAlt",
+      title: "Brand Logo Alt Text",
+      type: "string",
+      group: "global",
+    }),
+    defineField({
       name: "footerTagline",
       title: "Footer Tagline",
       type: "text",

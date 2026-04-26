@@ -37,6 +37,37 @@ function setText(selector, value) {
   }
 }
 
+function renderBrandLogo(logo, brandName) {
+  const headerLogo = document.querySelector("#brand-logo");
+  const footerLogo = document.querySelector("#footer-logo");
+  const headerName = document.querySelector("#brand-name");
+  const footerName = document.querySelector("#footer-brand");
+  const hasLogo = Boolean(logo?.url);
+
+  [headerLogo, footerLogo].forEach((node) => {
+    if (!node) {
+      return;
+    }
+
+    if (hasLogo) {
+      node.src = logo.url;
+      node.alt = logo.alt || `${brandName || "Brand"} logo`;
+      node.style.display = "block";
+    } else {
+      node.removeAttribute("src");
+      node.style.display = "none";
+    }
+  });
+
+  [headerName, footerName].forEach((node) => {
+    if (!node) {
+      return;
+    }
+
+    node.style.display = hasLogo ? "none" : "";
+  });
+}
+
 function setLink(selector, config) {
   const node = document.querySelector(selector);
   if (!node || !config) {
@@ -162,6 +193,7 @@ function renderPage(content) {
   setText("#brand-name", content.brandName);
   setText("#footer-brand", content.brandName);
   setText("#footer-tagline", content.footerTagline);
+  renderBrandLogo(content.brandLogo, content.brandName);
 
   setText("#hero-eyebrow", content.hero?.eyebrow);
   setText("#hero-title-prefix", content.hero?.titlePrefix);
@@ -240,6 +272,10 @@ function normalizeSanityContent(result) {
 
   return {
     brandName: result.brandName,
+    brandLogo: {
+      url: result.brandLogo?.asset?.url,
+      alt: result.brandLogoAlt,
+    },
     footerTagline: result.footerTagline,
     hero: {
       eyebrow: result.hero?.eyebrow,
@@ -299,6 +335,12 @@ async function loadSanityContent() {
 
   const groq = `*[_type == "siteSettings"][0]{
     brandName,
+    brandLogoAlt,
+    brandLogo{
+      asset->{
+        url
+      }
+    },
     footerTagline,
     hero{
       eyebrow,
