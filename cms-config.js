@@ -1,5 +1,5 @@
 window.SITE_CMS_CONFIG = {
-  projectId: "",
+  projectId: "arzxzk0s",
   dataset: "production",
   apiVersion: "2026-04-15",
 };

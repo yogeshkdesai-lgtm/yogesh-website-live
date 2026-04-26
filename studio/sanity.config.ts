@@ -6,11 +6,10 @@ import {schemaTypes} from "./schemaTypes";
 export default defineConfig({
   name: "default",
   title: "Yogesh K. Desai Website",
-  projectId: "YOUR_PROJECT_ID",
+  projectId: "arzxzk0s",
   dataset: "production",
   plugins: [structureTool()],
   schema: {
     types: schemaTypes,
   },
 });
-

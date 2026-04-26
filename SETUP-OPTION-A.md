@@ -48,6 +48,8 @@ Before running it, replace `YOUR_PROJECT_ID` in:
 - [studio/sanity.config.ts](/Users/yogeshkdesai/Documents/Codex/2026-04-26/build-a-website-for-yogesh-k/studio/sanity.config.ts)
 - [studio/sanity.cli.ts](/Users/yogeshkdesai/Documents/Codex/2026-04-26/build-a-website-for-yogesh-k/studio/sanity.cli.ts)
 
+This project is already wired to Sanity project ID `arzxzk0s`.
+
 Keep the dataset as `production` unless you intentionally want another dataset.
 
 ## Step 4: Connect the public website to Sanity
@@ -56,7 +58,7 @@ Open [cms-config.js](/Users/yogeshkdesai/Documents/Codex/2026-04-26/build-a-webs
 
 ```js
 window.SITE_CMS_CONFIG = {
-  projectId: "your-project-id",
+  projectId: "arzxzk0s",
   dataset: "production",
   apiVersion: "2026-04-15",
 };
