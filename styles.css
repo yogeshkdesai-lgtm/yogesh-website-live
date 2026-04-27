@@ -345,7 +345,7 @@ textarea {
 
 .portrait-frame {
   position: relative;
-  min-height: 760px;
+  min-height: 700px;
   border-radius: 36px;
   padding: 18px;
   overflow: hidden;
@@ -368,12 +368,12 @@ textarea {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 720px;
+  height: 680px;
   object-fit: contain;
-  object-position: center bottom;
+  object-position: center 90%;
   border-radius: 28px;
-  transform: scale(0.82);
-  transform-origin: center bottom;
+  transform: scale(1.16);
+  transform-origin: center 88%;
 }
 
 .portrait-stage {
@@ -381,7 +381,7 @@ textarea {
   inset: 18px;
   border-radius: 28px;
   background:
-    radial-gradient(circle at 50% 13%, rgba(255, 241, 217, 0.98), rgba(233, 198, 142, 0.88) 17%, rgba(33, 47, 41, 0.95) 50%),
+    radial-gradient(circle at 50% 11%, rgba(255, 241, 217, 0.98), rgba(233, 198, 142, 0.9) 18%, rgba(33, 47, 41, 0.95) 57%),
     linear-gradient(180deg, #253831 0%, #172520 100%);
 }
 
@@ -412,13 +412,13 @@ textarea {
 }
 
 .floating-card-top {
-  top: 26px;
+  top: 24px;
   left: -18px;
 }
 
 .floating-card-bottom {
-  right: -32px;
-  bottom: 30px;
+  right: -26px;
+  bottom: 24px;
   max-width: 250px;
 }
 
@@ -790,13 +790,13 @@ textarea {
   }
 
   .portrait-frame {
-    min-height: 660px;
+    min-height: 610px;
   }
 
   .hero-image {
-    height: 620px;
-    transform: scale(0.86);
-    transform-origin: center bottom;
+    height: 582px;
+    transform: scale(1.08);
+    transform-origin: center 88%;
   }
 
   .floating-card-top {
@@ -821,13 +821,13 @@ textarea {
   }
 
   .portrait-frame {
-    min-height: 520px;
+    min-height: 480px;
   }
 
   .hero-image {
-    height: 484px;
-    transform: scale(0.92);
-    transform-origin: center bottom;
+    height: 448px;
+    transform: scale(1.02);
+    transform-origin: center 88%;
   }
 
   .section,
