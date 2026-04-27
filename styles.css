@@ -313,6 +313,7 @@ textarea {
 .hero-visual {
   position: relative;
   padding: 22px 28px 28px 0;
+  isolation: isolate;
 }
 
 .portrait-frame {
@@ -355,6 +356,7 @@ textarea {
 
 .floating-card {
   position: absolute;
+  z-index: 3;
   display: grid;
   gap: 6px;
   max-width: 220px;
@@ -383,8 +385,8 @@ textarea {
 }
 
 .floating-card-bottom {
-  right: -22px;
-  bottom: 22px;
+  right: -18px;
+  bottom: 34px;
 }
 
 .metrics {
@@ -762,6 +764,7 @@ textarea {
 
   .floating-card-bottom {
     right: 12px;
+    bottom: 18px;
   }
 }
 
