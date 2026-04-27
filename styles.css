@@ -359,10 +359,11 @@ textarea {
   z-index: 3;
   display: grid;
   gap: 6px;
-  max-width: 220px;
+  max-width: 250px;
   padding: 18px 20px;
   border-radius: 20px;
-  background: rgba(255, 252, 247, 0.9);
+  background: rgba(255, 252, 247, 0.96);
+  backdrop-filter: blur(16px);
   box-shadow: var(--shadow-soft);
   border: 1px solid rgba(32, 24, 18, 0.08);
 }
@@ -385,8 +386,9 @@ textarea {
 }
 
 .floating-card-bottom {
-  right: -18px;
-  bottom: 34px;
+  right: -72px;
+  bottom: 28px;
+  max-width: 280px;
 }
 
 .metrics {
@@ -763,8 +765,9 @@ textarea {
   }
 
   .floating-card-bottom {
-    right: 12px;
+    right: 6px;
     bottom: 18px;
+    max-width: 240px;
   }
 }
 
@@ -805,6 +808,21 @@ textarea {
 
   .contact-link {
     word-break: break-word;
+  }
+
+  .floating-card {
+    max-width: 210px;
+    padding: 16px 18px;
+  }
+
+  .floating-card-top {
+    top: 16px;
+    left: 8px;
+  }
+
+  .floating-card-bottom {
+    right: 8px;
+    bottom: 10px;
   }
 }
 
