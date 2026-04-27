@@ -217,13 +217,13 @@ textarea {
 
 .hero {
   position: relative;
-  padding: 72px 0 36px;
+  padding: 92px 0 44px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 48px;
+  grid-template-columns: minmax(0, 0.98fr) minmax(440px, 0.82fr);
+  gap: 72px;
   align-items: center;
 }
 
@@ -273,7 +273,9 @@ textarea {
 }
 
 .hero h1 {
-  font-size: clamp(3.2rem, 7vw, 6.6rem);
+  max-width: 8.2ch;
+  font-size: clamp(3.05rem, 6.2vw, 5.9rem);
+  line-height: 0.94;
 }
 
 .hero h1 span {
@@ -298,40 +300,43 @@ textarea {
 }
 
 .hero-text {
-  max-width: 36rem;
-  margin: 28px 0 0;
-  font-size: 1.1rem;
+  max-width: 32rem;
+  margin: 32px 0 0;
+  font-size: 1.13rem;
+  line-height: 1.8;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-top: 34px;
+  margin-top: 40px;
 }
 
 .hero-visual {
   position: relative;
-  padding: 22px 28px 28px 0;
+  padding: 34px 54px 34px 18px;
   isolation: isolate;
 }
 
 .portrait-frame {
   position: relative;
-  min-height: 740px;
-  border-radius: var(--radius-xl);
-  padding: 16px;
+  min-height: 760px;
+  border-radius: 36px;
+  padding: 18px;
   overflow: hidden;
-  background: linear-gradient(145deg, rgba(255, 249, 240, 0.86), rgba(231, 215, 193, 0.54));
-  box-shadow: var(--shadow-card);
+  background: linear-gradient(160deg, rgba(255, 251, 244, 0.88), rgba(227, 209, 183, 0.44));
+  box-shadow:
+    0 30px 90px rgba(67, 39, 19, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
 }
 
 .portrait-frame::before {
   content: "";
   position: absolute;
-  inset: -18px 18px 18px -18px;
-  border: 1px solid rgba(32, 24, 18, 0.1);
-  border-radius: calc(var(--radius-xl) + 8px);
+  inset: -20px 24px 24px -20px;
+  border: 1px solid rgba(32, 24, 18, 0.08);
+  border-radius: 44px;
   z-index: -1;
 }
 
@@ -339,19 +344,21 @@ textarea {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 708px;
+  height: 720px;
   object-fit: contain;
   object-position: center bottom;
-  border-radius: calc(var(--radius-xl) - 10px);
+  border-radius: 28px;
+  transform: scale(0.94);
+  transform-origin: center bottom;
 }
 
 .portrait-stage {
   position: absolute;
-  inset: 16px;
-  border-radius: calc(var(--radius-xl) - 10px);
+  inset: 18px;
+  border-radius: 28px;
   background:
-    radial-gradient(circle at 50% 14%, rgba(255, 244, 226, 0.95), rgba(241, 207, 154, 0.88) 22%, rgba(25, 39, 35, 0.96) 62%),
-    linear-gradient(180deg, #233630 0%, #17231f 100%);
+    radial-gradient(circle at 50% 13%, rgba(255, 241, 217, 0.98), rgba(233, 198, 142, 0.88) 19%, rgba(33, 47, 41, 0.95) 58%),
+    linear-gradient(180deg, #253831 0%, #172520 100%);
 }
 
 .floating-card {
@@ -359,12 +366,12 @@ textarea {
   z-index: 3;
   display: grid;
   gap: 6px;
-  max-width: 250px;
-  padding: 18px 20px;
-  border-radius: 20px;
-  background: rgba(255, 252, 247, 0.96);
+  max-width: 240px;
+  padding: 18px 22px;
+  border-radius: 22px;
+  background: rgba(255, 252, 247, 0.97);
   backdrop-filter: blur(16px);
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 20px 60px rgba(67, 39, 19, 0.14);
   border: 1px solid rgba(32, 24, 18, 0.08);
 }
 
@@ -381,14 +388,14 @@ textarea {
 }
 
 .floating-card-top {
-  top: 42px;
-  left: -34px;
+  top: 20px;
+  left: -8px;
 }
 
 .floating-card-bottom {
-  right: -72px;
-  bottom: 28px;
-  max-width: 280px;
+  right: -18px;
+  bottom: 22px;
+  max-width: 250px;
 }
 
 .metrics {
@@ -749,31 +756,33 @@ textarea {
 
   .hero-visual {
     order: 0;
-    padding-right: 0;
+    padding: 18px 10px 26px;
   }
 
   .portrait-frame {
-    min-height: 620px;
+    min-height: 660px;
   }
 
   .hero-image {
-    height: 588px;
+    height: 618px;
+    transform: scale(0.95);
   }
 
   .floating-card-top {
-    left: 12px;
+    top: 18px;
+    left: 8px;
   }
 
   .floating-card-bottom {
-    right: 6px;
-    bottom: 18px;
-    max-width: 240px;
+    right: 2px;
+    bottom: 20px;
+    max-width: 220px;
   }
 }
 
 @media (max-width: 720px) {
   .hero {
-    padding-top: 40px;
+    padding-top: 48px;
   }
 
   .metrics-grid {
@@ -786,6 +795,7 @@ textarea {
 
   .hero-image {
     height: 488px;
+    transform: scale(0.97);
   }
 
   .section,
@@ -811,18 +821,18 @@ textarea {
   }
 
   .floating-card {
-    max-width: 210px;
-    padding: 16px 18px;
+    max-width: 196px;
+    padding: 14px 16px;
   }
 
   .floating-card-top {
-    top: 16px;
+    top: 12px;
     left: 8px;
   }
 
   .floating-card-bottom {
     right: 8px;
-    bottom: 10px;
+    bottom: 12px;
   }
 }
 
