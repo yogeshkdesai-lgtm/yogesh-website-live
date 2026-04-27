@@ -1,7 +1,7 @@
 :root {
   --bg: #f4ecdf;
   --bg-soft: #efe3d0;
-  --surface: rgba(255, 251, 245, 0.76);
+  --surface: rgba(255, 251, 245, 0.82);
   --surface-strong: #fff9f0;
   --text: #201812;
   --muted: #655a4c;
@@ -13,6 +13,7 @@
   --white: #fffdf8;
   --shadow-soft: 0 18px 60px rgba(67, 39, 19, 0.12);
   --shadow-card: 0 24px 70px rgba(67, 39, 19, 0.14);
+  --shadow-premium: 0 30px 90px rgba(67, 39, 19, 0.14);
   --radius-xl: 32px;
   --radius-lg: 24px;
   --radius-md: 18px;
@@ -34,9 +35,9 @@ body {
   font-family: var(--sans);
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(191, 93, 54, 0.14), transparent 28%),
-    radial-gradient(circle at right 20%, rgba(32, 51, 46, 0.08), transparent 24%),
-    linear-gradient(180deg, #f7efe4 0%, #f4ecdf 45%, #efe5d7 100%);
+    radial-gradient(circle at top left, rgba(191, 93, 54, 0.14), transparent 26%),
+    radial-gradient(circle at right 20%, rgba(32, 51, 46, 0.08), transparent 22%),
+    linear-gradient(180deg, #f8f1e8 0%, #f3eadc 42%, #eee2d3 100%);
 }
 
 img {
@@ -69,17 +70,18 @@ textarea {
   position: sticky;
   top: 0;
   z-index: 20;
-  backdrop-filter: blur(18px);
-  background: rgba(244, 236, 223, 0.78);
-  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(20px);
+  background: rgba(248, 239, 227, 0.78);
+  border-bottom: 1px solid rgba(32, 24, 18, 0.08);
+  box-shadow: 0 8px 30px rgba(67, 39, 19, 0.04);
 }
 
 .header-row {
   display: grid;
   grid-template-columns: auto 1fr auto auto;
   align-items: center;
-  gap: 18px;
-  min-height: 82px;
+  gap: 22px;
+  min-height: 88px;
 }
 
 .brand {
@@ -113,7 +115,8 @@ textarea {
 .site-nav {
   display: flex;
   justify-content: center;
-  gap: 26px;
+  gap: 30px;
+  font-size: 1.03rem;
 }
 
 .site-nav a,
@@ -123,9 +126,30 @@ textarea {
   transition: color 180ms ease;
 }
 
+.site-nav a {
+  position: relative;
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 1px;
+  background: rgba(32, 24, 18, 0.4);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 180ms ease;
+}
+
 .site-nav a:hover,
 .footer-links a:hover {
   color: var(--text);
+}
+
+.site-nav a:hover::after {
+  transform: scaleX(1);
 }
 
 .menu-toggle {
@@ -161,12 +185,12 @@ textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 50px;
-  padding: 0 24px;
+  min-height: 52px;
+  padding: 0 26px;
   border-radius: 999px;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  font-size: 0.76rem;
   font-weight: 700;
   transition:
     transform 180ms ease,
@@ -183,7 +207,7 @@ textarea {
 .button-solid {
   color: var(--white);
   background: var(--forest);
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 18px 44px rgba(32, 51, 46, 0.18);
 }
 
 .button-solid:hover {
@@ -296,7 +320,7 @@ textarea {
 .cta-band p,
 .footer-copy {
   color: var(--muted);
-  line-height: 1.75;
+  line-height: 1.82;
 }
 
 .hero-text {
@@ -399,7 +423,7 @@ textarea {
 }
 
 .metrics {
-  padding: 18px 0 12px;
+  padding: 28px 0 20px;
 }
 
 .metrics-grid {
@@ -417,12 +441,12 @@ textarea {
 .contact-card {
   border: 1px solid var(--line);
   background: var(--surface);
-  backdrop-filter: blur(14px);
-  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 70px rgba(67, 39, 19, 0.08);
 }
 
 .metrics article {
-  padding: 28px 20px;
+  padding: 34px 22px;
   border-radius: var(--radius-md);
   text-align: center;
 }
@@ -444,18 +468,19 @@ textarea {
 }
 
 .section {
-  padding: 92px 0;
+  padding: 110px 0;
 }
 
 .section-contrast {
-  background: linear-gradient(180deg, rgba(255, 248, 239, 0.6), rgba(239, 227, 208, 0.76));
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(255, 248, 239, 0.68), rgba(239, 227, 208, 0.78));
+  border-top: 1px solid rgba(32, 24, 18, 0.08);
+  border-bottom: 1px solid rgba(32, 24, 18, 0.08);
 }
 
 .section-heading {
   max-width: 720px;
-  margin-bottom: 48px;
+  margin-bottom: 58px;
 }
 
 .section-heading-center {
@@ -466,7 +491,8 @@ textarea {
 
 .section h2,
 .cta-band h2 {
-  font-size: clamp(2.3rem, 5vw, 4.6rem);
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  line-height: 0.98;
 }
 
 .section-heading p:last-child {
@@ -476,12 +502,12 @@ textarea {
 .service-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  gap: 24px;
 }
 
 .service-card {
-  padding: 30px;
-  border-radius: var(--radius-lg);
+  padding: 34px 32px;
+  border-radius: 28px;
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
@@ -490,7 +516,7 @@ textarea {
 .contact-card:hover,
 .about-notes article:hover {
   transform: translateY(-4px);
-  box-shadow: 0 28px 80px rgba(67, 39, 19, 0.17);
+  box-shadow: var(--shadow-premium);
 }
 
 .service-card h3,
@@ -528,7 +554,7 @@ textarea {
 .cta-grid {
   display: grid;
   grid-template-columns: 1fr 0.86fr;
-  gap: 28px;
+  gap: 34px;
   align-items: start;
 }
 
@@ -553,8 +579,8 @@ textarea {
 }
 
 .booking-card {
-  padding: 32px;
-  border-radius: var(--radius-lg);
+  padding: 38px 36px;
+  border-radius: 28px;
 }
 
 .testimonial-shell {
@@ -583,8 +609,8 @@ textarea {
 
 .testimonial-card {
   min-height: 320px;
-  padding: 34px 34px 28px;
-  border-radius: var(--radius-xl);
+  padding: 40px 40px 32px;
+  border-radius: 30px;
   text-align: center;
 }
 
@@ -630,12 +656,12 @@ textarea {
 .about-panel,
 .about-notes article,
 .contact-card {
-  border-radius: var(--radius-lg);
+  border-radius: 28px;
 }
 
 .about-panel,
 .about-notes article {
-  padding: 30px;
+  padding: 34px;
 }
 
 .about-notes {
@@ -644,7 +670,7 @@ textarea {
 }
 
 .cta-band {
-  padding: 88px 0;
+  padding: 102px 0;
   background:
     radial-gradient(circle at top right, rgba(255, 255, 255, 0.1), transparent 20%),
     linear-gradient(135deg, var(--forest) 0%, var(--forest-soft) 100%);
@@ -656,9 +682,9 @@ textarea {
 }
 
 .contact-card {
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.14);
+  padding: 34px;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
   box-shadow: none;
 }
 
@@ -683,8 +709,8 @@ textarea {
 .footer-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr 0.8fr;
-  gap: 24px;
-  padding: 32px 0 24px;
+  gap: 30px;
+  padding: 40px 0 28px;
 }
 
 .footer-brand {
@@ -720,7 +746,7 @@ textarea {
     padding: 12px;
     border: 1px solid var(--line);
     border-radius: 24px;
-    background: rgba(255, 248, 239, 0.96);
+    background: rgba(255, 248, 239, 0.98);
     box-shadow: var(--shadow-soft);
   }
 
@@ -748,6 +774,10 @@ textarea {
   .cta-grid,
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 88px 0;
   }
 
   .hero-copy {
@@ -800,7 +830,7 @@ textarea {
 
   .section,
   .cta-band {
-    padding: 72px 0;
+    padding: 76px 0;
   }
 
   .testimonial-shell {
@@ -813,7 +843,7 @@ textarea {
 
   .testimonial-card {
     min-height: 0;
-    padding: 28px 22px 24px;
+    padding: 30px 24px 26px;
   }
 
   .contact-link {
